@@ -1,0 +1,154 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 .AppleColorEmojiUI;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20020\viewh22200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ENG \'96 1 \'96 TWINT\
+\
+This project is based on the scraping concept, the collection of big number of data from the web, by using scripts that analyze networks.\
+\
+The network of choice is Twitter. The social allows to analyze data to developers through API licenses. The other way to get the data is Twint.\
+It is a Python based script that has almost no limits in terms of numbers and works in an easy and fast way.\
+\
+For the first phase is necessary to install Python (probably already installed on your OS) and Twint.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 >	https://www.python.org/\
+>	https://github.com/twintproject/twint\
+\
+The script needs many requirements, contained in the requirements.txt file in this folder.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - Python 3.6;\
+- aiohttp;\
+- aiodns;\
+- beautifulsoup4;\
+- cchardet;\
+- elasticsearch;\
+- pysocks;\
+- pandas (>=0.23.0);\
+- aiohttp_socks;\
+- schedule;\
+- geopy;\
+- fake-useragent;\
+- py-googletransx.\
+\
+The script can be launched from a Python interpreteur, but we will use through CLI. To check that Python is installed, type \'93python\'94 in the Terminal and if it is installed it should output something like: \'93Python 3.6\'94\
+\
+Next step is to install Twint from Terminal typing the commands:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf0 	git clone https://github.com/twintproject/twint.git\
+	cd twint\
+	pip3 install . -r requirements.txt\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 otherwise, using pip Python package installer:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf0 	pip3 install twint
+\f0 \
+\
+Now we should have everything installed in order to stard scraping with a simple command line in the Terminal.\
+\
+The line we used is a scraping for keyword \'93ninainchnails\'94. The settings for our scraping are:\
+\'b7 search for keyword \'93nineinchnails\'94\
+\'b7 only tweets with >3 likes\
+\'b7 do not consider retweets, to avoid doubles\
+\'b7 hide terminal output\
+\'b7 start scraping from 23rd March\
+\'b7 output on CSV file named outputtwint.csv\
+\
+The command line is:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \CocoaLigature0 	twint -s nineinchnails --since 2020-03-23 -ho --min-likes 3 -fr -o outputtwint.csv --csv
+\f0 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+It downloads in the twint folder an output file with columns that divide many different data, ranging from nickname to likes and retweets.\
+The output files is in inversed cronological order.\
+\
+This output is the data contained in our first book \'93
+\f2 \uc0\u55358 \u56785 
+\f0  tweet\'92d about \'93nineinchnails\'94. The book is a catalogue of tweets in cronological order, starting from the album release.\
+\
+\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\'96\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 ITA \'96 1 \'96 TWINT\
+\
+Questo progetto si basa sul concetto di scraping, ovvero la possibilit\'e0 di raccogliere grandi quantit\'e0 di dati dall\'92internet tramite l\'92utilizzo di script che sondano dei network e ne scaricano grandi quantit\'e0 di dati.\
+\
+Il network da cui sono stati tratti i dati in questione \'e8 Twitter. Il social concede dei permessi di analisi dati agli sviluppatori, sotto forma di licenze API, che vengono anche concesse dalla maggior parte dei social network. Per ottenere tale tipo di chiavi di analisi dati \'e8 necessario fare richiesta, ma una via alternativa \'e8 quella di Twint. \'c8 uno script Python che elude le limitazioni legate agli API e permette di raccogliere quantit\'e0 di dati in modo molto libero e semplice.\
+\
+Per la prima fase di progetto quindi \'e8 stato necessario installare Python (gi\'e0 presente di sistema su alcuni OS) e Twint.\
+\
+>	https://www.python.org/\
+>	https://github.com/twintproject/twint\
+\
+Lo script inoltre necessita di numerosi requirements qui elencati e anche contenuti nel file requirements.txt all\'92interno di questa stessa cartella, che verranno scaricati da Twint al momento dell\'92installazione.\
+\
+- Python 3.6;\
+- aiohttp;\
+- aiodns;\
+- beautifulsoup4;\
+- cchardet;\
+- elasticsearch;\
+- pysocks;\
+- pandas (>=0.23.0);\
+- aiohttp_socks;\
+- schedule;\
+- geopy;\
+- fake-useragent;\
+- py-googletransx.\
+\
+Lo script pu\'f2 essere lanciato tramite Python interpreter, ma per la semplicit\'e0 del caso si \'e8 scelto di utilizzarlo tramite CLI (Command Line Input), ovvero tramite Terminale. Per verificare che Python sia installato, basta digitare \'93python\'94 nel Terminale, e nel caso in cui venga restituita una versione come pu\'f2 essere \'93Python 3.6\'94, ci\'f2 significa che il sistema \'e8 pronto a leggere i comandi in tale linguaggio.\
+Lo step successivo \'e8 installare twint da Terminale lanciando il comando:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf0 	git clone https://github.com/twintproject/twint.git\
+	cd twint\
+	pip3 install . -r requirements.txt
+\f0 \
+\
+o in alternativa, utilizzando pip, il package installer di Python, che semplifica la procedura:\
+\
+
+\f1 	pip3 install twint
+\f0 \
+\
+A questo punto, dovremmo avere installato tutto in modo da poter scaricare i dati interessati con una semplice linea di comando sul Terminale.\
+\
+Il comando utilizzato \'e8 uno scraping per keyword \'93nineinchnails\'94. Volendo analizzare le opinioni degli utenti pubblicate su Twitter appena dopo l\'92uscita di Ghost V e VI avvenuta il 3 Marzo 2020, le indicazioni per lo scraping che sono state indicate sono le seguenti:\
+\
+\'b7 ricerca per keyword \'93nineinchnails\'94\
+\'b7 considera solamente i tweet con 3 o pi\'f9 likes\
+\'b7 filtra i retweet per evitare doppioni\
+\'b7 nascondi l\'92output nel terminale per mostrarlo esclusivamente nel file finale\
+\'b7 data di pubblicazione successiva al 23 marzo 2020\
+\'b7 output su file in tabella .csv nominato outputtwint.csv\
+\
+il comando \'e8 quindi formattato in questo modo:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \CocoaLigature0 	twint -s nineinchnails --since 2020-03-23 -ho --min-likes 3 -fr -o outputtwint.csv --csv
+\f0 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+e scarica nella cartella di Twint il file di output con delle colonne che dividono username, data, ora, fuso orario, tweet, likes, retweets e molte altre informazioni utili.\
+\
+A partire da questo output \'e8 stato progettato il libro 1: \'93
+\f2 \uc0\u55358 \u56785 
+\f0  tweet\'92d about \'93nineinchnails\'94. Il volume \'e8 un catalogo di tweet in ordine cronologico a partire dalla data di uscita dei due album.\
+}
